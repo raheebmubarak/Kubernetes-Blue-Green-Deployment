@@ -1,0 +1,32 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: blue-green-cluster
+  region: ap-south-1
+
+managedNodeGroups:
+
+  - name: application-nodes
+
+    instanceType: t3.micro
+
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 6
+
+    volumeSize: 30
+    volumeType: gp3
+
+    privateNetworking: true
+
+    labels:
+      role: application
+
+    tags:
+      Project: blue-green-k8s
+      Environment: project
+
+    iam:
+      withAddonPolicies:
+        autoScaler: true

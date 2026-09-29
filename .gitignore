@@ -1,0 +1,3 @@
+helm/bluegreen-app/values-secret.yaml
+app/target/
+*.log

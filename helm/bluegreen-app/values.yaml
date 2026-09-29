@@ -1,0 +1,11 @@
+image:
+  repository: bluegreen-demo
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+
+database:
+  host: "spring-boot-rds.c1mg4esy03jo.ap-south-1.rds.amazonaws.com"
+  port: 3306
+  name: "mysql"
+  username: ""
+  password: ""
